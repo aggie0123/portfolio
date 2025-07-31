@@ -158,3 +158,137 @@ input::-webkit-search-decoration,input::-webkit-search-cancel-button,input::-web
 }
 
 /* .carousel-track:hover {animation-play-state: paused;} */
+
+/* ---------------- 반응형 작업----------------- */
+
+/* --- 미디어 쿼리 시작 (태블릿: 768px 이상) --- */
+@media (min-width: 768px) {
+    /* common 공통 패딩 */
+    .main section {padding: 40px 0;}
+
+    /* section01 */
+    .main .section01 {padding-bottom: 10vh;}
+    .main .section01 .textBox {padding: 0 50px;} /* px 고정값으로 다시 돌아가도 좋고, vw 유지해도 좋음 */
+    .main .section01 .textBox p {
+        font-size: 2.2rem; /* 태블릿 폰트 사이즈 */
+        margin-bottom: 2rem;
+        max-width: 700px; /* 태블릿에서 최대 너비 제한 */
+    }
+
+    /* section02 */
+    .main .section02 .content01 {padding: 0 50px;}
+    .main .section02 .content01 .textBox {
+        top: 10vh;
+        margin-top: 20vh; /* 스티키 요소 마진 조정 */
+    }
+    .main .section02 .content01 .textBox h4 {font-size: 1.5rem;}
+    .main .section02 .content01 .textBox p {font-size: 2rem;}
+    .main .section02 .content01 .textBox span {font-size: 1.25rem;}
+    .main .section02 .content01 ul {
+        margin-top: 15vh;
+        align-content: flex-end; /* 원래대로 오른쪽 정렬 */
+    }
+    .main .section02 .content01 ul li {
+        flex-direction: row; /* 태블릿에서는 가로 정렬 */
+        justify-content: space-around; /* 요소들 간 간격 균등 분배 */
+        align-items: center; /* 세로 중앙 정렬 */
+        gap: 0; /* 간격 제거 */
+    }
+    .main .section02 .content01 ul li .leftBox {margin-bottom: 0;} /* 마진 제거 */
+    .main .section02 .content01 ul li .leftBox p {font-size: 1.5rem;}
+    .main .section02 .content01 ul li .leftBox span {font-size: 1rem;}
+    .main .section02 .content01 ul li .rightBox {
+        width: 70%; /* 원래대로 70% 너비 */
+        align-items: flex-start;
+    }
+    .main .section02 .content01 ul li .rightBox p {font-size: 1.5rem;}
+    .main .section02 .content01 ul li .rightBox #vd {font-size: 1.6rem;}
+    .main .section02 .content01 ul li .rightBox span {font-size: 1.6rem;}
+    .main .section02 .content02 {margin-top: 200px;} /* px 값으로 복귀 또는 조절 */
+    .main .section02 .gsap_pin .background {width: calc(100% - 64px + var(--padding));} /* 원래대로 복귀 */
+
+    /* section03 */
+    .main .section03 {
+        flex-direction: row; /* 태블릿부터는 가로 정렬 */
+        justify-content: space-around;
+        align-items: flex-start; /* 상단 정렬 */
+        text-align: left;
+        padding: 50px;
+    }
+    .main .section03 .topBox {
+        font-size: 50px; /* 90px 대신 조절 */
+        line-height: 1.2;
+        margin-bottom: 0; /* 세로 정렬이 아니므로 마진 제거 */
+        top: 0; /* sticky top 초기화 또는 재설정 */
+    }
+    .main .section03 .topBox .smalltxt {font-size: 40px;} /* 80px 대신 조절 */
+    .main .section03 .btmBox {
+        font-size: 20px;
+        align-items: flex-start; /* 좌측 정렬 */
+        align-content: flex-start;
+        text-align: left;
+        width: auto; /* 너비 자동 조절 */
+    }
+    .main .section03 .btmBox .info {
+        align-items: flex-start; /* 좌측 정렬 */
+    }
+    .main .section03 .btmBox .info p img {width: 30px; height: 30px; margin-right: 16px;}
+    .main .section03 .btmBox a {font-size: 24px; padding: 20px 30px;}
+
+    /* loop 라이브러리 */
+    :root {
+        --gap-width: 20px; /* 태블릿에서 원래 간격 */
+        --slide-width: 210px; /* 태블릿 슬라이드 너비 */
+        --slide-height: 210px; /* 태블릿 슬라이드 높이 */
+    }
+}
+
+/* --- 미디어 쿼리 시작 (데스크톱: 1024px 이상) --- */
+@media (min-width: 1024px) {
+    /* common 공통 패딩 */
+    .main section {padding: 60px 0;}
+
+    /* section01 */
+    .main .section01 {padding-bottom: 15vh;}
+    .main .section01 .textBox p {
+        font-size: 30px; /* 30px로 복귀 또는 데스크톱 최적화 */
+        margin-bottom: 2.5rem;
+        width: 537px; /* 데스크톱에서 원하는 고정 너비 */
+    }
+
+    /* section02 */
+    .main .section02 .content01 {padding: 0 60px;}
+    .main .section02 .content01 .textBox {
+        top: 140px;
+        margin-top: 60vh; /* 원래대로 복귀 */
+    }
+    .main .section02 .content01 .textBox h4 {font-size: 20px;}
+    .main .section02 .content01 .textBox p {font-size: 28px;}
+    .main .section02 .content01 .textBox span {font-size: 20px;}
+    .main .section02 .content01 ul {margin-top: 200px;}
+    .main .section02 .content01 ul li .leftBox p {font-size: 22px;}
+    .main .section02 .content01 ul li .leftBox span {font-size: 15px;}
+    .main .section02 .content01 ul li .rightBox p {font-size: 22px;}
+    .main .section02 .content01 ul li .rightBox #vd {font-size: 25px;}
+    .main .section02 .content01 ul li .rightBox span {font-size: 25px;}
+    .main .section02 .content02 {margin-top: 400px;}
+
+    /* section03 */
+    .main .section03 {
+        padding: 60px;
+    }
+    .main .section03 .topBox {
+        font-size: 90px; /* 원래대로 복귀 */
+        line-height: 5rem;
+    }
+    .main .section03 .topBox .smalltxt {font-size: 80px;} /* 원래대로 복귀 */
+    .main .section03 .btmBox {font-size: 24px;}
+    .main .section03 .btmBox a {font-size: 24px;}
+
+    /* loop 라이브러리 */
+    :root {
+        --gap-width: 20px;
+        --slide-width: 210px;
+        --slide-height: 210px;
+    }
+}
